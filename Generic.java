@@ -1,24 +1,50 @@
 package om.practice.generic;
 
-public class GenericUC4 
-{
+public class GenericUC5<X, Y, Z> {
+	X[] myXArray;
+	Y[] myYArray;
+	Z[] myZArray;
 
-	public static void main(String[] args){
 
-		System.out.println(max(4, 8, 6));
-		System.out.println(max("Apples", "Peach", "Banana"));
-		System.out.println(max(1.4, 2.5, 6.5));
-		System.out.println(max('h','j','d'));
+	public GenericUC5(X[] myXArray, Y[] myYArray, Z[] myZArray) {
+		
+		this.myXArray = myXArray;
+		this.myYArray = myYArray;
+		this.myZArray = myZArray;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Integer[] a = {1,5,10};
+		Double[] b = {1.1, 3.5, 5.6};
+		Character[] c = {'a', 'c', 'g'};
+
+//		toPrint(a);
+//		toPrint(b);
+//		toPrint(c);
+		new GenericUC5<Integer, Double, Character>(a, b, c).toPrint();
 	}
 
-	public static <E extends Comparable<E>> E max(E a, E b,E c) {
-		E max =a;
-		if (b.compareTo(max) >0)
-			max = b;
-		if (c.compareTo(max)>0)
-			max= c;
+	private void toPrint() {
+		toPrint(myXArray);
+		toPrint(myYArray);
+		toPrint(myZArray);
+	}
+	
+	public static Integer printMax(Integer x,Integer y, Integer z) {
+		Integer max = x;
+		if(y.compareTo(max) > 0) {
+			max = y;
+		}
+		if(z.compareTo(max) > 0) {
+			max = z;
+		}
+        testMax(x, y, z, max);
+		return max;
 
-		return max;	
+	}
+	private static void testMax(Integer x, Integer y, Integer z, Integer max) {
+		// TODO Auto-generated method stub
+		
 	}
 	private static <E> void toPrint(E[] a) {
 
@@ -27,3 +53,4 @@ public class GenericUC4
 		}
 	}
 }
+
