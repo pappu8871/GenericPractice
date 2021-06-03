@@ -1,13 +1,12 @@
-
 package om.practice.generic;
 
-public class GenericUC1 {
+public class GenericUC2 {
 	public static void main(String[] args) {
 
-		Integer[] a = {1, 2, 3}; 
-		toPrint(a);
-		System.out.println("print maximum Value");
-		System.out.println(max(a));
+		Float[] f = {(float) 1.20, (float) 5.40, (float) 2.02}; 
+		toPrint(f);
+		System.out.println("Maximum Float value is:");
+		System.out.println(max(f));
 
 	}
 	public static <E extends Comparable<E>> E max(E... elements) {
@@ -19,10 +18,12 @@ public class GenericUC1 {
 		}
 		return max;
 	}
+	
 	private static <E> void toPrint(E[] a) {
 
 		for (E i:a) {
 			System.out.println(i);  
 		}
 	}
+
 }
