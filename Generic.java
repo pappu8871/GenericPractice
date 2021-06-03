@@ -1,29 +1,29 @@
 package om.practice.generic;
 
-public class GenericUC2 {
-	public static void main(String[] args) {
+public class GenericUC3 {
 
-		Float[] f = {(float) 1.20, (float) 5.40, (float) 2.02}; 
-		toPrint(f);
-		System.out.println("Maximum Float value is:");
-		System.out.println(max(f));
+public static void main(String[] args) {
 
-	}
-	public static <E extends Comparable<E>> E max(E... elements) {
-		E max = elements[0];
-		for (E element : elements) {
-			if (element.compareTo(max) > 0) {
-				max = element;
-			}
-		}
-		return max;
-	}
-	
-	private static <E> void toPrint(E[] a) {
+	String[] s = {"Apple", "Peach", "Banana"}; 
+	toPrint(s);
+	System.out.println("Maximum String value is:");
+	System.out.println(max(s));
 
-		for (E i:a) {
-			System.out.println(i);  
+}
+public static <E extends Comparable<E>> E max(E... elements) {
+	E max = elements[0];
+	for (E element : elements) {
+		if (element.compareTo(max) > 0) {
+			max = element;
 		}
 	}
+	return max;
+}
 
+private static <E> void toPrint(E[] a) {
+
+	for (E i:a) {
+		System.out.println(i);  
+	}
+}
 }
